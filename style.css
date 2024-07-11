@@ -27,7 +27,7 @@ body {
 }
 
 header {
-    position: fixed; /* Đặt header là fixed để nó luôn cố định ở đỉnh màn hình */
+    position: fixed;
     top: 0;
     width: 100%;
     padding: 10px 0;
@@ -43,6 +43,10 @@ header .logo img {
     height: 50px;
     width: auto;
     margin-left: 20px;
+}
+
+header .navDiv {
+    display: none;
 }
 
 header ul {
@@ -62,6 +66,47 @@ header ul li a {
 
 header ul li a:hover {
     color: var(--gradient-bg);
+}
+
+header .navDiv label {
+    display: block;
+    cursor: pointer;
+    padding: 5px;
+}
+
+header .nav {
+    display: none;
+}
+
+header input[type="checkbox"]:checked ~ .nav {
+    display: flex;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 70%;
+    height: 100vh;
+    background-color: var(--light);
+    z-index: 999;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(0);
+    transition: transform 0.3s ease;
+}
+
+header .nav label {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+
+header .nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
 }
 
 .container {
@@ -181,13 +226,12 @@ header ul li a:hover {
 }
 
 @media screen and (max-width: 1024px) {
-    header ul {
-        display: none;
-        position: fixed;
+    header .navDiv {
+        display: block;
     }
 
-    header ul li {
-        padding: 0 10px;
+    header ul {
+        display: none;
     }
 
     .banner {
@@ -207,13 +251,16 @@ header ul li a:hover {
 }
 
 @media screen and (max-width: 767px) {
-    header ul {
-        display: none;
-        position: fixed;
+    header {
+        padding: 10px;
     }
 
     header ul li {
         padding: 0 8px;
+    }
+
+    header .nav {
+        width: 100%;
     }
 
     .banner {
