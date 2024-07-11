@@ -75,6 +75,11 @@ header .navDiv label {
 }
 
 header .nav {
+    display: none;
+}
+
+header input[type="checkbox"]:checked ~ .nav {
+    display: flex;
     position: fixed;
     top: 0;
     right: 0;
@@ -82,11 +87,10 @@ header .nav {
     height: 100vh;
     background-color: var(--light);
     z-index: 999;
-    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    transform: translateX(100%);
+    transform: translateX(0);
     transition: transform 0.3s ease;
 }
 
@@ -97,8 +101,12 @@ header .nav label {
     cursor: pointer;
 }
 
-header input[type="checkbox"]:checked ~ .nav {
-    transform: translateX(0);
+header .nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
 }
 
 .container {
