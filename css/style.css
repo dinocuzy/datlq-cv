@@ -45,9 +45,7 @@ header .logo img {
     margin-left: 20px;
 }
 
-header .navDiv,
-header .nav label,
-header input {
+header .navDiv {
     display: none;
 }
 
@@ -99,12 +97,8 @@ header .nav label {
     cursor: pointer;
 }
 
-header .nav ul {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
+header input[type="checkbox"]:checked ~ .nav {
+    transform: translateX(0);
 }
 
 .container {
@@ -155,22 +149,24 @@ header .nav ul {
     margin-bottom: 30px;
 }
 
-
 .subsection h3 {
     margin-bottom: 10px;
 }
+
 .listSkill,
 .listProject {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
 }
+
 .listProject .item .name h4 {
     text-align: center;
 }
+
 .listSkill .item,
 .listProject .item {
-    padding:left;
+    padding: 20px;
     background-color: #fff;
     border-radius: 10px;
     box-shadow: var(--box-shadow);
@@ -222,8 +218,12 @@ header .nav ul {
 }
 
 @media screen and (max-width: 1024px) {
-    header ul li {
-        padding: 0 10px;
+    header .navDiv {
+        display: block;
+    }
+
+    header ul {
+        display: none;
     }
 
     .banner {
@@ -266,7 +266,5 @@ header .nav ul {
     .listSkill,
     .listProject {
         grid-template-columns: 1fr;
-    
     }
-    
 }
