@@ -27,7 +27,7 @@ body {
 }
 
 header {
-    position: fixed;
+    position: fixed; /* Đặt header là fixed để nó luôn cố định ở đỉnh màn hình */
     top: 0;
     width: 100%;
     padding: 10px 0;
