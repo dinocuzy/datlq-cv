@@ -74,10 +74,6 @@ header .navDiv label {
     padding: 5px;
 }
 
-header .nav {
-    display: none;
-}
-
 header input[type="checkbox"]:checked ~ .nav {
     display: flex;
     position: fixed;
