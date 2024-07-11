@@ -45,10 +45,6 @@ header .logo img {
     margin-left: 20px;
 }
 
-header .navDiv {
-    display: none;
-}
-
 header ul {
     margin: 0;
     list-style: none;
@@ -66,43 +62,6 @@ header ul li a {
 
 header ul li a:hover {
     color: var(--gradient-bg);
-}
-
-header .navDiv label {
-    display: block;
-    cursor: pointer;
-    padding: 5px;
-}
-
-header input[type="checkbox"]:checked ~ .nav {
-    display: flex;
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 70%;
-    height: 100vh;
-    background-color: var(--light);
-    z-index: 999;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    transform: translateX(0);
-    transition: transform 0.3s ease;
-}
-
-header .nav label {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    cursor: pointer;
-}
-
-header .nav ul {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
 }
 
 .container {
@@ -222,12 +181,13 @@ header .nav ul {
 }
 
 @media screen and (max-width: 1024px) {
-    header .navDiv {
-        display: block;
-    }
-
     header ul {
         display: none;
+        position: fixed;
+    }
+
+    header ul li {
+        padding: 0 10px;
     }
 
     .banner {
@@ -247,16 +207,13 @@ header .nav ul {
 }
 
 @media screen and (max-width: 767px) {
-    header {
-        padding: 10px;
+    header ul {
+        display: none;
+        position: fixed;
     }
 
     header ul li {
         padding: 0 8px;
-    }
-
-    header .nav {
-        width: 100%;
     }
 
     .banner {
